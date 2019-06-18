@@ -1,6 +1,8 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+let g:python3_host_prog = '/home/lparsons/miniconda3/envs/neovim/bin/python' " Python 3
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -224,3 +226,9 @@ let g:promptline_preset = {
 "
 " to disable powerline symbols
 " `let g:promptline_powerline_symbols = 0`
+
+if has('nvim')
+    let g:python_host_prog = '$HOME/miniconda3/envs/neovim2/bin/python'
+    let g:python3_host_prog = '$HOME/miniconda3/envs/neovim3/bin/python'
+endif
+

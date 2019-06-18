@@ -8,6 +8,10 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ln -sf ${BASEDIR}/.vimrc ~/.vimrc
 # ln -s ${BASEDIR}/vim/ ~/.vim
 
+# nvim
+mkdir -p ${BASEDIR}/.config/nvim
+ln -sf ${BASEDIR}/.config/nvim/init.vim ${HOME}/.config/nvim/init.vim
+
 # bash
 ln -sf ${BASEDIR}/.inputrc ~/.inputrc
 
@@ -24,7 +28,10 @@ ln -sf ${BASEDIR}/.tmux-osx.conf ~/.tmux-osx.conf
 
 # Setup Vundle
 mkdir -p "${HOME}/.vim"
-git clone https://github.com/VundleVim/Vundle.vim.git "${HOME}/.vim/bundle/Vundle.vim"
+vundle_dir="${HOME}/.vim/bundle/Vundle.vim"
+if [ ! -d "${vundle_dir}" ]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git "${vundle_dir}"
+fi
 vim +PluginUpdate +qall
 
 # Setup shell prompt

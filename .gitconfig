@@ -1,23 +1,25 @@
 [user]
 	name = Lance Parsons
 	email = lparsons@princeton.edu
-	signingkey = 5070B3FC6BD18EA3
+    signingkey = 5070B3FC6BD18EA3
 [color]
     diff = auto
     status = auto
     branch = auto
 [include]
-        path = .github.gitconfig
+    # path = .github.gitconfig
 [push]
     default = matching
 [alias]
-	lg = log --color --graph --pretty=format:'%C(auto)%h -%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lg = log --color --graph --pretty=format:'%C(auto)%h -%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lgs = log --color --graph --pretty=format:'%C(auto)%h -%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --show-signature
+    logs = log --show-signature
 	d = difftool
 [diff]
 	tool = vimdiff
 [difftool]
 	prompt = false
 [commit]
-	gpgsign = true
+    # gpgsign = true
 [gpg]
 	program = gpg2
