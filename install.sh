@@ -9,7 +9,7 @@ ln -sf ${BASEDIR}/.vimrc ~/.vimrc
 # ln -s ${BASEDIR}/vim/ ~/.vim
 
 # nvim
-mkdir -p ${BASEDIR}/.config/nvim
+mkdir -p ${HOME}/.config/nvim
 ln -sf ${BASEDIR}/.config/nvim/init.vim ${HOME}/.config/nvim/init.vim
 
 # bash
