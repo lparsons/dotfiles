@@ -1,7 +1,11 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-let g:python3_host_prog = '/home/lparsons/miniconda3/envs/neovim/bin/python' " Python 3
+
+if has('nvim')
+    let g:python_host_prog = $HOME.'/miniconda3/envs/neovim2/bin/python'
+    let g:python3_host_prog = $HOME.'/miniconda3/envs/neovim3/bin/python'
+endif
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -41,6 +45,15 @@ Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'edkolev/promptline.vim'
 Plugin 'editorconfig/editorconfig-vim'
+
+if has('nvim')
+  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plugin 'Shougo/deoplete.nvim'
+  Plugin 'roxma/nvim-yarp'
+  Plugin 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
 
 " vim-scripts repos
 "Plugin 'L9'
@@ -175,10 +188,10 @@ let g:LatexBox_Folding=1
 autocmd BufNewFile,BufRead *.tt2 setf tt2html
 
 " UltiSnips Trigger (works with YouCompleteMe)
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsListSnippets="<F6>"
-let g:snips_email="lparsons@princeton.edu"
-let g:snips_github="https://github.com/lparsons"
+"let g:UltiSnipsExpandTrigger="<c-j>"
+"let g:UltiSnipsListSnippets="<F6>"
+"let g:snips_email="lparsons@princeton.edu"
+"let g:snips_github="https://github.com/lparsons"
 
 " Populate the g:airline_symbols dictionary with powerline symbols
 let g:airline_powerline_fonts = 1
@@ -227,8 +240,4 @@ let g:promptline_preset = {
 " to disable powerline symbols
 " `let g:promptline_powerline_symbols = 0`
 
-if has('nvim')
-    let g:python_host_prog = '$HOME/miniconda3/envs/neovim2/bin/python'
-    let g:python3_host_prog = '$HOME/miniconda3/envs/neovim3/bin/python'
-endif
 
