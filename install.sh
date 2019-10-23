@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-#!/bin/bash
-
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # vim
@@ -25,16 +23,6 @@ ln -sf ${BASEDIR}/.hgrc ~/.hgrc
 ln -sf ${BASEDIR}/.tmux.conf ~/.tmux.conf
 ln -sf ${BASEDIR}/.tmux-osx.conf ~/.tmux-osx.conf
 
-
-# Setup Vundle
-mkdir -p "${HOME}/.vim"
-vundle_dir="${HOME}/.vim/bundle/Vundle.vim"
-if [ ! -d "${vundle_dir}" ]; then
-    git clone https://github.com/VundleVim/Vundle.vim.git "${vundle_dir}"
-fi
-vim +PluginUpdate +qall
-
-# Setup shell prompt
-SHELL_PROMPT_SCRIPT="${HOME}/.shell_prompt.sh"
-mv "${SHELL_PROMPT_SCRIPT}" "${SHELL_PROMPT_SCRIPT}.old"
-vim "+PromptlineSnapshot ${SHELL_PROMPT_SCRIPT} airline" +qall
+# ssh
+mkdir -p ${HOME}/.ssh
+ln -sf ${BASEDIR}/.ssh/rc ${HOME}/.ssh/rc
