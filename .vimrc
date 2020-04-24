@@ -33,7 +33,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'davidhalter/jedi-vim'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'vim-syntastic/syntastic'
-Plugin 'w0rp/ale'
+Plugin 'dense-analysis/ale'
 Plugin 'kien/ctrlp.vim'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'jmcantrell/vim-virtualenv'
@@ -240,4 +240,7 @@ let g:promptline_preset = {
 " to disable powerline symbols
 " `let g:promptline_powerline_symbols = 0`
 
-
+" Ale config
+let g:airline#extensions#ale#enabled = 1
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
