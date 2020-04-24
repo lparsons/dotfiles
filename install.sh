@@ -2,6 +2,9 @@
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+#get_release.sh
+ln -sf ${BASEDIR}/.get_release.sh ~/.get_release.sh
+
 # vim
 ln -sf ${BASEDIR}/.vimrc ~/.vimrc
 # ln -s ${BASEDIR}/vim/ ~/.vim
