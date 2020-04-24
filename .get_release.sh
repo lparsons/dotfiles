@@ -42,4 +42,4 @@ RELEASE_DIR=$(slugify "${OS}:${MAJOR_VER}")
 #echo "OS: ${OS}"
 #echo "VER: ${VER}"
 #echo "MAJOR_VER: ${MAJOR_VER}"
-#echo "DIR: ${DIR}"
+#echo "DIR: ${RELEASE_DIR}"
