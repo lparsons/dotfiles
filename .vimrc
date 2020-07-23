@@ -207,6 +207,7 @@ au BufNewFile,BufRead *.snake set syntax=snakemake
 
 " Setup keyboard shortcut for Markdown preview
 let vim_markdown_preview_hotkey='<C-m>'
+let vim_markdown_preview_github=1 
 
 " Promptline
 " sections (a, b, c, x, y, z, warn) are optional
@@ -247,3 +248,8 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 nmap <silent> ]w <Plug>(ale_next_wrap)
 nmap <silent> [w <Plug>(ale_previous_wrap)
+
+" Fugitive Conflict Resolution
+nnoremap <leader>gd :Gvdiffsplit!<CR>
+nnoremap gdh :diffget //2<CR>
+nnoremap gdl :diffget //3<CR>
