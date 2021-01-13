@@ -31,4 +31,5 @@ mkdir -p "${HOME}/.ssh"
 ln -sf "${BASEDIR}/.ssh/rc" "${HOME}/.ssh/rc"
 
 # UCSC Kent Tools
-ln -sf "${BASEDIR}/.hg.conf" "${HOME}/.hg.conf"
+cp --remove-destination "${BASEDIR}/.hg.conf" "${HOME}/.hg.conf"
+chmod 600 "${HOME}/.hg.conf"
