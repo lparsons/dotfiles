@@ -253,3 +253,6 @@ nmap <silent> [w <Plug>(ale_previous_wrap)
 nnoremap <leader>gd :Gvdiffsplit!<CR>
 nnoremap gdh :diffget //2<CR>
 nnoremap gdl :diffget //3<CR>
+
+" Set some YAML config
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
