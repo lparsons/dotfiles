@@ -249,8 +249,18 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 nmap <silent> ]w <Plug>(ale_next_wrap)
 nmap <silent> [w <Plug>(ale_previous_wrap)
 
+
+function! FormatSnakemake(buffer) abort
+    return {
+    \   'command': 'snakefmt -'
+    \}
+endfunction
+
+execute ale#fix#registry#Add('snakefmt', 'FormatSnakemake', ['snakemake'], 'snakefmt for Snakemake')
+
 let g:ale_fixers = {
 \    'python': ['black', 'isort'],
+\    'snakemake': ['snakefmt'],
 \}
 let g:ale_fix_on_save = 1
 
