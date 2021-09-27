@@ -7,96 +7,148 @@ if has('nvim')
     let g:python3_host_prog = $HOME.'/miniconda3/envs/neovim3/bin/python'
 endif
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+" " set the runtime path to include Vundle and initialize
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
+" " alternatively, pass a path where Vundle should install plugins
+" "call vundle#begin('~/some/path/here')
+" 
+" " let Vundle manage Vundle, required
+" Plugin 'gmarik/Vundle.vim'
+" 
+" " My Plugins here:
+" "
+" " original repos on github
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'fholgado/minibufexpl.vim'
+" Plugin 'vim-perl/vim-perl'
+" Plugin 'wgibbs/vim-irblack'
+" Plugin 'scrooloose/nerdtree'
+" Plugin 'tpope/vim-surround'
+" Plugin 'Lokaltog/vim-easymotion'
+" Plugin 'tpope/vim-markdown'
+" Plugin 'SirVer/ultisnips'
+" Plugin 'honza/vim-snippets'
+" Plugin 'davidhalter/jedi-vim'
+" "Plugin 'Valloric/YouCompleteMe'
+" "Plugin 'vim-syntastic/syntastic'
+" Plugin 'dense-analysis/ale'
+" Plugin 'kien/ctrlp.vim'
+" Plugin 'LaTeX-Box-Team/LaTeX-Box'
+" Plugin 'jmcantrell/vim-virtualenv'
+" Plugin 'altercation/vim-colors-solarized'
+" Plugin 'crusoexia/vim-monokai'
+" Plugin 'tpope/vim-fugitive'
+" Plugin 'JamshedVesuna/vim-markdown-preview'
+" Plugin 'tmux-plugins/vim-tmux-focus-events'
+" Plugin 'tmux-plugins/vim-tmux'
+" Plugin 'edkolev/promptline.vim'
+" Plugin 'editorconfig/editorconfig-vim'
+" 
+" if has('nvim')
+"   Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" else
+"   Plugin 'Shougo/deoplete.nvim'
+"   Plugin 'roxma/nvim-yarp'
+"   Plugin 'roxma/vim-hug-neovim-rpc'
+" endif
+" let g:deoplete#enable_at_startup = 1
+" 
+" " vim-scripts repos
+" "Plugin 'L9'
+" "Plugin 'FuzzyFinder'
+" Plugin 'desert256.vim'
+" Plugin 'bufkill.vim'
+" Plugin 'perl-support.vim'
+" Plugin 'JavaScript-Indent'
+" Plugin 'TaskList.vim'
+" Plugin 'sjl/gundo.vim'
+" 
+" " The following are examples of different formats supported.
+" " Keep Plugin commands between vundle#begin/end.
+" " plugin on GitHub repo
+" "Plugin 'tpope/vim-fugitive'
+" " plugin from http://vim-scripts.org/vim/scripts.html
+" "Plugin 'L9'
+" " Git plugin not hosted on GitHub
+" "Plugin 'git://git.wincent.com/command-t.git'
+" " git repos on your local machine (i.e. when working on your own plugin)
+" "Plugin 'file:///home/gmarik/path/to/plugin'
+" " The sparkup vim script is in a subdirectory of this repo called vim.
+" " Pass the path to set the runtimepath properly.
+" "Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" " Avoid a name conflict with L9
+" "Plugin 'user/L9', {'name': 'newL9'}
+" 
+" Plugin 'https://github.com/snakemake/snakemake.git', {'rtp': 'misc/vim/'}
+" 
+" " All of your Plugins must be added before the following line
+" call vundle#end()            " required
+" filetype plugin indent on    " required
+" " To ignore plugin indent changes, instead use:
+" "filetype plugin on
+" "
+" " Brief help
+" " :PluginList          - list configured plugins
+" " :PluginInstall(!)    - install (update) plugins
+" " :PluginSearch(!) foo - search (or refresh cache first) for foo
+" " :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
+" "
+" " see :h vundle for more details or wiki for FAQ
+" " Put your non-Plugin stuff after this line
 
-" My Plugins here:
-"
-" original repos on github
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'fholgado/minibufexpl.vim'
-Plugin 'vim-perl/vim-perl'
-Plugin 'wgibbs/vim-irblack'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-surround'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'tpope/vim-markdown'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'davidhalter/jedi-vim'
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'vim-syntastic/syntastic'
-Plugin 'dense-analysis/ale'
-Plugin 'kien/ctrlp.vim'
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
-Plugin 'jmcantrell/vim-virtualenv'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'crusoexia/vim-monokai'
-Plugin 'tpope/vim-fugitive'
-Plugin 'JamshedVesuna/vim-markdown-preview'
-Plugin 'tmux-plugins/vim-tmux-focus-events'
-Plugin 'tmux-plugins/vim-tmux'
-Plugin 'edkolev/promptline.vim'
-Plugin 'editorconfig/editorconfig-vim'
 
+
+
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+
+" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+Plug 'junegunn/vim-easy-align'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'fholgado/minibufexpl.vim'
+" Plugin 'vim-perl/vim-perl'
+" Plugin 'wgibbs/vim-irblack'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'tpope/vim-markdown'
+" Plugin 'SirVer/ultisnips'
+" Plugin 'honza/vim-snippets'
+" Plugin 'davidhalter/jedi-vim'
+" "Plugin 'Valloric/YouCompleteMe'
+" "Plugin 'vim-syntastic/syntastic'
+Plug 'dense-analysis/ale'
+Plug 'kien/ctrlp.vim'
+" Plugin 'LaTeX-Box-Team/LaTeX-Box'
+" Plugin 'jmcantrell/vim-virtualenv'
+" Plugin 'altercation/vim-colors-solarized'
+Plug 'crusoexia/vim-monokai'
+" Plugin 'tpope/vim-fugitive'
+" Plugin 'JamshedVesuna/vim-markdown-preview'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'tmux-plugins/vim-tmux'
+Plug 'edkolev/promptline.vim'
+Plug 'editorconfig/editorconfig-vim'
 if has('nvim')
-  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
-  Plugin 'Shougo/deoplete.nvim'
-  Plugin 'roxma/nvim-yarp'
-  Plugin 'roxma/vim-hug-neovim-rpc'
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
 endif
 let g:deoplete#enable_at_startup = 1
+" 
 
-" vim-scripts repos
-"Plugin 'L9'
-"Plugin 'FuzzyFinder'
-Plugin 'desert256.vim'
-Plugin 'bufkill.vim'
-Plugin 'perl-support.vim'
-Plugin 'JavaScript-Indent'
-Plugin 'TaskList.vim'
-Plugin 'sjl/gundo.vim'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-"Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-"Plugin 'L9'
-" Git plugin not hosted on GitHub
-"Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-"Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Avoid a name conflict with L9
-"Plugin 'user/L9', {'name': 'newL9'}
-
-Plugin 'https://github.com/snakemake/snakemake.git', {'rtp': 'misc/vim/'}
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList          - list configured plugins
-" :PluginInstall(!)    - install (update) plugins
-" :PluginSearch(!) foo - search (or refresh cache first) for foo
-" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" Initialize plugin system
+call plug#end()
 
 
 set laststatus=2   " Always show the statusline
