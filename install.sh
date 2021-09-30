@@ -16,6 +16,9 @@ ln -sf "${BASEDIR}/.config/nvim/init.vim" "${HOME}/.config/nvim/init.vim"
 # bash
 ln -sf "${BASEDIR}/.inputrc" "${HOME}/.inputrc"
 
+# dircolors
+ln -sf "${BASEDIR}/.dircolors" "${HOME}/.dircolors"
+
 # git
 ln -sf "${BASEDIR}/.gitconfig" "${HOME}/.gitconfig"
 
