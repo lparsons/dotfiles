@@ -147,6 +147,8 @@ endif
 let g:deoplete#enable_at_startup = 1
 " 
 
+Plug 'https://github.com/snakemake/snakemake.git', {'rtp': 'misc/vim/'}
+
 " Initialize plugin system
 call plug#end()
 
