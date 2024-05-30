@@ -36,3 +36,6 @@ ln -sf "${BASEDIR}/.ssh/rc" "${HOME}/.ssh/rc"
 # UCSC Kent Tools
 cp --remove-destination "${BASEDIR}/.hg.conf" "${HOME}/.hg.conf"
 chmod 600 "${HOME}/.hg.conf"
+
+# promptline
+source "${BASEDIR}/.promptline_monokai.sh"

@@ -3,8 +3,8 @@ filetype off                  " required
 
 
 if has('nvim')
-    let g:python_host_prog = $HOME.'/miniconda3/envs/neovim2/bin/python'
-    let g:python3_host_prog = $HOME.'/miniconda3/envs/neovim3/bin/python'
+    let g:python_host_prog = $HOME.'/mambaforge/envs/neovim2/bin/python'
+    let g:python3_host_prog = $HOME.'/mambaforge/envs/neovim3/bin/python'
 endif
 
 
@@ -120,8 +120,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'tpope/vim-markdown'
-" Plugin 'SirVer/ultisnips'
-" Plugin 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 " Plugin 'davidhalter/jedi-vim'
 " "Plugin 'Valloric/YouCompleteMe'
 " "Plugin 'vim-syntastic/syntastic'
@@ -303,6 +303,9 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 nmap <silent> ]w <Plug>(ale_next_wrap)
 nmap <silent> [w <Plug>(ale_previous_wrap)
 
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 function! FormatSnakemake(buffer) abort
     return {
