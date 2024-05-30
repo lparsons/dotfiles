@@ -38,4 +38,4 @@ cp --remove-destination "${BASEDIR}/.hg.conf" "${HOME}/.hg.conf"
 chmod 600 "${HOME}/.hg.conf"
 
 # promptline
-source "${BASEDIR}/.promptline_monokai.sh"
+ln -sf "${BASEDIR}/.promptline_monokai.sh" "${HOME}/.shell_prompt.sh"

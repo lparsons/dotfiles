@@ -14,6 +14,24 @@
 
 2. Start tmux then `Prefix` - `I` (capital I)
 
+## Install [Miniforge](https://github.com/conda-forge/miniforge)
+
+1. Install miniforge
+
+    ```bash
+    curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+    bash Miniforge3-$(uname)-$(uname -m).sh
+    ```
+
+2. Configure [bioconda]() channels
+
+    ```bash
+    conda config --add channels nodefaults
+    conda config --add channels bioconda
+    conda config --add channels conda-forge
+    conda config --set channel_priority strict
+    ```
+
 ## [Install NeoVim](https://github.com/neovim/neovim/blob/master/INSTALL.md#appimage-universal-linux-package) and plugins
 
 1. Install neovim
@@ -49,3 +67,7 @@
     `:PlugDiff` to review the changes from the last update
 
 3. Create python3 environment (set correct path in `.vimrc`)
+
+    ```bash
+    mamba create -n neovim3 pynvim
+    ```
