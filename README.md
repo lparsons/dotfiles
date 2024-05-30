@@ -71,3 +71,18 @@
     ```bash
     mamba create -n neovim3 pynvim
     ```
+
+## Update `.bashrc`
+
+   ```bash
+   # Set nvim as default editor (replace vi/vim)
+    if type "nvim" &> /dev/null; then    
+        alias vi="nvim"    
+        alias vim="nvim"    
+        alias vimdiff='nvim -d'    
+        export EDITOR=nvim    
+    fi 
+    
+    # Setup promptline
+    source "${HOME}/.shell_prompt.sh"
+    ```
